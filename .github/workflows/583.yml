@@ -70,4 +70,6 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+      - name: Test root project
+        run: ./gradlew :windowsTest
 
