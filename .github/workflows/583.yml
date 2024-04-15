@@ -57,3 +57,17 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
+  windows-test:
+    name: Kotlin Native tests for Windows
+    needs: gradle-wrapper-validation
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+      - name: Setup Java & Gradle
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: ${{ env.CACHING }}
+
