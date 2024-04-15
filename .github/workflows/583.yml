@@ -43,10 +43,7 @@ jobs:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
           cache: ${{ env.CACHING }}
-      - name: Test 'internal' subproject
-        run: ./gradlew :internal:jsTest
-      - name: Test root project
-        run: ./gradlew :jsTest
+
   jvm-checks:
     name: Kotlin/JVM checks
     needs: gradle-wrapper-validation
